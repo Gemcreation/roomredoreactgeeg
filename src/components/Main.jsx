@@ -1,10 +1,16 @@
 
-import Uppersection from "./Uppersection"
+import Uppersection from "./Uppersection";
+import Lowersection from "./Lowersection";
+
 
 const Main = () =>{
 
     return (
-        <Uppersection/>
+        <>
+            <Uppersection/>
+
+            <Lowersection/>
+        </>
     )
 }
 
