@@ -4,7 +4,7 @@ import darkImg from "../assets/images/image-about-dark.jpg";
 const Lowersection = ()=>{
 
     return(
-        <section>
+        <section className="flex main">
             <article>
                 <div>
                     <img src={lightImg} alt="About furniture light" />

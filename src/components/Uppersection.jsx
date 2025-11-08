@@ -1,4 +1,6 @@
-import herosliderImg from "../assets/images/desktop-image-hero-1.jpg";
+
+import heroDesktopImg from "../assets/images/desktop-image-hero-1.jpg";
+// import heroMobileImg from "../assets/images/desktop-image-hero-1.jpg";
 import iconArrow from "../assets/images/icon-arrow.svg";
 import slideIconLeft from "../assets/images/icon-angle-left.svg";
 import slideIconRight from "../assets/images/icon-angle-right.svg";
@@ -13,11 +15,15 @@ const Uppersection = () => {
     //   ];
 
     return(
-        <section>
 
-            <article>
+        <section className="flexGrid main">
+            <article className="leftSide">
                 <div>
-                    <img src={herosliderImg} alt="slider image" />
+                    {/* <picture>
+                        <source media='(min-width: 600px)' srcSet={heroDesktopImg}></source>
+                        <img src={heroDesktopImg} alt='Web Image' />
+                    </picture> */}
+                    <img src={heroDesktopImg} alt="slider image" />
                 </div>
             </article>
 

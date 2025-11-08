@@ -3,8 +3,8 @@ import roomlogo from "../assets/images/logo.svg";
 const Header = () =>{
 
     return(
-        <header>
-            <a href="/">
+        <header className="header">
+            <a href="#">
                 <img className="site-header" src={roomlogo} alt="Room logo" />
             </a>
 
