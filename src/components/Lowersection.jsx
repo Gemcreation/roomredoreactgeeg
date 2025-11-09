@@ -7,7 +7,7 @@ const Lowersection = ()=>{
         <section className="flex main">
             <article>
                 <div>
-                    <img src={lightImg} alt="About furniture light" />
+                    <img src={darkImg} alt="About furniture light" />
                 </div>
 
                 <div>
@@ -21,7 +21,7 @@ const Lowersection = ()=>{
                 </div>
 
                 <div>
-                    <img src={darkImg} alt="About furniture light" />
+                    <img src={lightImg} alt="About furniture light" />
                 </div>
             </article>
         </section>
