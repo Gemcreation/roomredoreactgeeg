@@ -11,6 +11,7 @@
     margin: auto;
 }
 
+//header part styling
 .header{
     width: 87%;
     margin: auto;
@@ -178,3 +179,18 @@ article.rightSide{
     }
   }
 }
+
+article.flexGrid .lowerSide{
+  display: flex;
+  flex-direction: row;
+
+}
+// section.flexGrid, section.main .lowerSide{
+//   display: flex;
+//   flex-direction: row;
+//   // grid-template-columns: 1fr 1fr;
+//   // min-height: calc(100vh - 0px);
+//   align-items: stretch;
+//   gap: 0px;
+//   // margin-bottom: -5px;
+// }
