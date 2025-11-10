@@ -8,11 +8,11 @@ import slideIconRight from "../assets/images/icon-angle-right.svg";
 
 const Uppersection = () => {
 
-    // const herosliderImg = [
-    //     "/images/desktop-image-hero-1.jpg",
-    //     "/images/desktop-image-hero-2.jpg",
-    //     "/images/desktop-image-hero-3.jpg",
-    //   ];
+    const herosliderImg = [
+        "/images/desktop-image-hero-1.jpg",
+        "/images/desktop-image-hero-2.jpg",
+        "/images/desktop-image-hero-3.jpg",
+      ];
 
     return(
 
@@ -23,7 +23,9 @@ const Uppersection = () => {
                         <source media='(min-width: 600px)' srcSet={heroDesktopImg}></source>
                         <img src={heroDesktopImg} alt='Web Image' />
                     </picture> */}
-                    <img src={heroDesktopImg} alt="slider image" />
+                    {/* <img src={heroDesktopImg} alt="slider image" /> this for the default hero img display, belos is the one for the hero img slidder*/}
+
+                    <img src={herosliderImg} alt="slider image" />
                 </div>
             </article>
 
