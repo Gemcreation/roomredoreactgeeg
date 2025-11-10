@@ -1,5 +1,5 @@
 
-import heroDesktopImg from "../assets/images/desktop-image-hero-1.jpg";
+// import heroDesktopImg from "../assets/images/desktop-image-hero-1.jpg";
 // import heroMobileImg from "../assets/images/desktop-image-hero-1.jpg";
 import iconArrow from "../assets/images/icon-arrow.svg";
 import slideIconLeft from "../assets/images/icon-angle-left.svg";
