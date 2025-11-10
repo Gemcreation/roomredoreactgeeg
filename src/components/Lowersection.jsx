@@ -4,13 +4,13 @@ import darkImg from "../assets/images/image-about-dark.jpg";
 const Lowersection = ()=>{
 
     return(
-        <section className="flexGrid main">
+        <section className="flexLower main">
             <article className="lowerSide">
                 <div>
                     <img src={darkImg} alt="About furniture light" />
                 </div>
 
-                <div>
+                <div className="text-content">
                     <h2>ABOUT OUR FURNITURE</h2>
                     <p>
                         Our multifunctional collection blends design and function to suit your individual taste.
@@ -20,7 +20,7 @@ const Lowersection = ()=>{
                     </p>
                 </div>
 
-                <div>
+                <div className="lowerImg">
                     <img src={lightImg} alt="About furniture light" />
                 </div>
             </article>
