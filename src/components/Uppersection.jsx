@@ -56,6 +56,19 @@ const Uppersection = () => {
                     {/* <img src={heroDesktopImg} alt="slider image" /> this for the default hero img display, belos is the one for the hero img slidder*/}
 
                     <img src={herosliderImg[currentIndex]} alt="slider image" />
+
+                    
+                    <div className="sliderControl">
+                        <div>
+                            <button className="sliderBtn" onClick={goToPrevious}>
+                                <img src={slideIconLeft} alt="slideIconLeft" />
+                            </button>
+
+                            <button className="sliderBtn" onClick={goToNext}>
+                                <img src={slideIconRight} alt="slideIconRight" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </article>
 
