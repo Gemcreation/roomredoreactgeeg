@@ -80,10 +80,10 @@ article.leftSide{
       display: block;
       // background-color: rgb(148, 15, 196);
   
-      img{
+      .img{
         width: 100%;
         height: 70vh;
-        // object-fit: cover;
+        object-fit: cover;
         // display: block;
       }
       }
@@ -92,7 +92,7 @@ article.leftSide{
     .sliderControl{
       position: absolute;
       left: 70%;
-      bottom: -50%;
+      bottom: -87.5%;
       display: flex;
       gap: 0;
       z-index: 50;

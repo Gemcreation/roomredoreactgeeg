@@ -55,7 +55,7 @@ const Uppersection = () => {
                     </picture> */}
                     {/* <img src={heroDesktopImg} alt="slider image" /> this for the default hero img display, belos is the one for the hero img slidder*/}
 
-                    <img src={herosliderImg[currentIndex]} alt="slider image" />
+                    <img src={herosliderImg[currentIndex]} alt="slider image" className="img" />
 
                     
                     <div className="sliderControl">
