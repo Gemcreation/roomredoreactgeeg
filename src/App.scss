@@ -269,6 +269,12 @@ section.flexLower{
   }
 }
 
+@media (max-width: 600px) {
+  .btnDesktop{
+    display: none; /* hide for small screens */
+  }
+}  
+
 @media (max-width: 900px) {
   .header{
     display: none; /* hide for small screens */

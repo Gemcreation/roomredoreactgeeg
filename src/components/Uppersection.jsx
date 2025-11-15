@@ -58,7 +58,7 @@ const Uppersection = () => {
                     <img src={herosliderImg[currentIndex]} alt="slider image" className="img" />
 
                     
-                    <div className="sliderControl">
+                    <div className="sliderControl desktop">
                         <div>
                             <button className="sliderBtn" onClick={goToPrevious}>
                                 <img src={slideIconLeft} alt="slideIconLeft" />
@@ -84,7 +84,7 @@ const Uppersection = () => {
                         </a>
                     </div>
 
-                    <div className="sliderControl">
+                    <div className="sliderControl btnDesktop">
                         <div>
                             <button className="sliderBtn" onClick={goToPrevious}>
                                 <img src={slideIconLeft} alt="slideIconLeft" />
