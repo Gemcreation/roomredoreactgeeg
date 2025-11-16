@@ -271,19 +271,6 @@ section.flexLower{
 }
 
 
-//responsiveness
-// @media screen and (max-width: 550px) {
-  
-//   //below is the left side own
-//   article.leftSide{
-//     div{
-
-//       div.sliderControlMob{
-//         display: none; /* hide for small screens */
-//       }
-//     }
-//   }
-// }
 @media screen and (max-width: 950px) {
   .header{
     display: none; /* hide for small screens */
@@ -317,6 +304,18 @@ section.flexLower{
       }
     }
   }//right side
+
+  section.flexLower{
+
+    .lowerSide{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: 10px;
+      margin-top: 0;
+      background-color: aqua;
+    }
+  }
 }
 
 // @media (max-width: 1000px) {
