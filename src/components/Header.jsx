@@ -8,6 +8,9 @@ const Header = () =>{
                 <img className="site-header" src={roomlogo} alt="Room logo" />
             </a>
 
+            //for icon open and close
+            <img className="site-header" src={roomlogo} alt="Room logo" />
+
             <nav>
                 <ul>
                     <li><a href="#home">home</a></li>
