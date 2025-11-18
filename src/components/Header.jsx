@@ -10,12 +10,10 @@ const Header = () =>{
                 <img className="site-header" src={roomlogo} alt="Room logo" />
             </a>
 
-            {/* for icon open nav*/}
-            <img className="site-header" src={iconHamburgerOpen} alt="Room logo" />
-            {/* for icon close nav */}
-            <img className="site-header" src={iconHamburgerClose} alt="Room logo" />
-
             <nav>
+
+                {/* for icon open nav*/}
+                <img className="site-header" src={iconHamburgerOpen} alt="Room logo" />
                 <ul>
                     <li><a href="#home">home</a></li>
                     <li><a href="#shop">shop</a></li>
@@ -23,6 +21,9 @@ const Header = () =>{
                     <li><a href="#contact">contact</a></li>
                 </ul>
             </nav>
+
+            {/* for icon close nav */}
+            <img className="site-header" src={iconHamburgerClose} alt="Room logo" />
         </header>
     )
 }
