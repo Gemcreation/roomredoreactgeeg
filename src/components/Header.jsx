@@ -1,5 +1,6 @@
 import roomlogo from "../assets/images/logo.svg";
-import iconHamburger from "../assets/images/icon-hamburger.svg";
+import iconHamburgerOpen from "../assets/images/icon-hamburger.svg";
+import iconHamburgerClose from "../assets/images/icon-close.svg";
 
 const Header = () =>{
 
@@ -9,8 +10,10 @@ const Header = () =>{
                 <img className="site-header" src={roomlogo} alt="Room logo" />
             </a>
 
-            {/* for icon open and close */}
-            <img className="site-header" src={iconHamburger} alt="Room logo" />
+            {/* for icon open nav*/}
+            <img className="site-header" src={iconHamburgerOpen} alt="Room logo" />
+            {/* for icon close nav */}
+            <img className="site-header" src={iconHamburgerClose} alt="Room logo" />
 
             <nav>
                 <ul>
