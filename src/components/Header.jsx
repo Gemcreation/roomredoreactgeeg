@@ -25,20 +25,36 @@ const Header = () =>{
                 <img className="site-header" src={roomlogo} alt="Room logo" />
             </a>
 
-            <nav className={(deviceWidth < 600) ? (navDisplay ? "open" : "") : ""}>
+            <nav className={(deviceWidth < 800) ? (navDisplay ? "open" : "") : ""}>
 
-                {/* for icon open nav*/}
-                <img className="site-header" src={iconHamburgerOpen} alt="Room logo" id="iconHamburgerOpen" onClick={closeNav} />
                 <ul>
+                    <li>
+                        <a href="#">
+                            
+                            {/* for icon close nav */}
+                            <img className="site-header" src={iconHamburgerClose} alt="Room logo" onClick={closeNav} />
+                        </a>
+                    </li>
                     <li><a href="#home">home</a></li>
                     <li><a href="#shop">shop</a></li>
                     <li><a href="#about">about</a></li>
                     <li><a href="#contact">contact</a></li>
                 </ul>
-            </nav>
 
-            {/* for icon close nav */}
-            <img className="site-header" src={iconHamburgerClose} alt="Room logo" onClick={openNav} />
+                <ul>
+                    <li className="hideOnMobile"><a href="#home">home</a></li>
+                    <li className="hideOnMobile"><a href="#shop">shop</a></li>
+                    <li className="hideOnMobile"><a href="#about">about</a></li>
+                    <li className="hideOnMobile"><a href="#contact">contact</a></li>
+                    <li className="menuButton">
+                        <a href="">
+                            {/* for icon open nav*/}
+                            <img className="site-header" src={iconHamburgerOpen} alt="Room logo" id="iconHamburgerOpen" onClick={openNav} />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
         </header>
     )
 }
