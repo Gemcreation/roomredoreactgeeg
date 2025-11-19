@@ -27,32 +27,32 @@ const Header = () =>{
 
             <nav className={(deviceWidth < 800) ? (navDisplay ? "open" : "") : ""}>
 
-                <ul>
-                    <li>
-                        <a href="#">
-                            
-                            {/* for icon close nav */}
-                            <img className="site-header" src={iconHamburgerClose} alt="Room logo" onClick={closeNav} />
-                        </a>
-                    </li>
+                {/* <ul className="notDeskTop">
                     <li><a href="#home">home</a></li>
                     <li><a href="#shop">shop</a></li>
                     <li><a href="#about">about</a></li>
                     <li><a href="#contact">contact</a></li>
-                </ul>
+                </ul> */}
+                {/* for icon close nav */}
 
-                <ul>
+                <ul className="onMobile">
                     <li className="hideOnMobile"><a href="#home">home</a></li>
                     <li className="hideOnMobile"><a href="#shop">shop</a></li>
                     <li className="hideOnMobile"><a href="#about">about</a></li>
                     <li className="hideOnMobile"><a href="#contact">contact</a></li>
                     <li className="menuButton">
                         <a href="">
-                            {/* for icon open nav*/}
                             <img className="site-header" src={iconHamburgerOpen} alt="Room logo" id="iconHamburgerOpen" onClick={openNav} />
                         </a>
                     </li>
+                    <li>
+                        <a href="#">
+                            
+                            <img className="site-header" src={iconHamburgerClose} alt="Room logo" onClick={closeNav} />
+                        </a>
+                    </li>
                 </ul>
+                {/* for icon open nav*/}
             </nav>
             
         </header>
