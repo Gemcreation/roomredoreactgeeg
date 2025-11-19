@@ -254,11 +254,12 @@ section.flexLower{
   }
 }
 
-
-@media screen and (max-width: 1000px) {
+// for the header responsiveness
+@media screen and (max-width: 1050px) {
   .header{
     display: none; /* hide for small screens */
   }
+
   section.flexGrid{
     display: flex;
     flex-direction: column;
@@ -266,79 +267,232 @@ section.flexLower{
     gap: 0px;
     // margin-bottom: -5px;
   }
-
-  //below is the left side own
-  article.leftSide{
-    width: 100%;
-    div{
-
-      div.sliderControlMob{
-        display: block; /* hide for small screens */
-      }
-    }
-  }//below is the left side own
-  
-  //this for the right side
-  article.rightSide{
-    width: 100%;
-    div.rightPadding{
-      padding: 50px 50px;
-
-      .sliderControlDesk{
-        display: none; /* hide for small screens */
-      }
-    }
-  }//right side
-
-  //for the lower part of the site
-  section.flexLower{
-    display: grid;
-  
-    article.lowerSide{
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: center;
-      // gap: 20px;
-      // margin-top: 0;
-  
-      img{
-          width: 100%;
-          // height: 200%;
-          // margin-top: -10px;
-      }
-      div.text-content{
-        background-color: #f99191;
-        padding: 50px 50px;
-  
-        h2{
-            font-size: 14px;
-            letter-spacing: 4px;
-            word-spacing: 2px;
-            margin-bottom: 12px;
+    
+      //below is the left side own
+      article.leftSide{
+        width: 100%;
+        div{
+    
+          div.sliderControlMob{
+            display: block; /* hide for small screens */
+          }
         }
-        p{
-            line-height: 1.8;
-            font-size: 10.8px;
-            color: hsl(0, 0%, 63%);
-            line-height: 1; 
-            font-size: 12.5px;
-            max-width: 365px;
-            color: hsl(0, 0%, 63%);
+      }//below is the left side own
+      
+      //this for the right side
+      article.rightSide{
+        width: 100%;
+        div.rightPadding{
+          padding: 50px 50px;
+    
+          .sliderControlDesk{
+            display: none; /* hide for small screens */
+          }
+        }
+      }//right side
+    
+      //for the lower part of the site
+      section.flexLower{
+        display: grid;
+      
+        article.lowerSide{
+          display: grid;
+          grid-template-columns: 1fr;
+          align-items: center;
+          // gap: 20px;
+          // margin-top: 0;
+      
+          img{
+              width: 100%;
+              // height: 200%;
+              // margin-top: -10px;
+          }
+          div.text-content{
+            background-color: #f99191;
+            padding: 50px 50px;
+      
+            h2{
+                font-size: 14px;
+                letter-spacing: 4px;
+                word-spacing: 2px;
+                margin-bottom: 12px;
+            }
+            p{
+                line-height: 1.8;
+                font-size: 10.8px;
+                color: hsl(0, 0%, 63%);
+                line-height: 1; 
+                font-size: 12.5px;
+                max-width: 365px;
+                color: hsl(0, 0%, 63%);
+            }
+          }
+      
         }
       }
-  
-    }
-  }
 }
 
-@media (max-width: 800px){
-  .hideOnMobile{
-      display: none;
+// for the menu/header responsiveness
+@media screen and (max-width: 500px) {
+  section.flexGrid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    background-color: #000000;
+    // margin-bottom: -5px;
   }
-  .menuButton{
-      display: block;
-  }
+    
+  //     //below is the left side own
+      article.leftSide{
+        width: 100%;
+        div{
+    
+          div.sliderControlMob{
+            display: block; /* hide for small screens */
+          }
+        }
+      }//below is the left side own
+      
+  //     //this for the right side
+  //     article.rightSide{
+  //       width: 100%;
+  //       div.rightPadding{
+  //         padding: 50px 50px;
+    
+  //         .sliderControlDesk{
+  //           display: none; /* hide for small screens */
+  //         }
+  //       }
+  //     }//right side
+    
+  //     //for the lower part of the site
+  //     section.flexLower{
+  //       display: grid;
+      
+  //       article.lowerSide{
+  //         display: grid;
+  //         grid-template-columns: 1fr;
+  //         align-items: center;
+  //         // gap: 20px;
+  //         // margin-top: 0;
+      
+  //         img{
+  //             width: 100%;
+  //             // height: 200%;
+  //             // margin-top: -10px;
+  //         }
+  //         div.text-content{
+  //           background-color: #f99191;
+  //           padding: 50px 50px;
+      
+  //           h2{
+  //               font-size: 14px;
+  //               letter-spacing: 4px;
+  //               word-spacing: 2px;
+  //               margin-bottom: 12px;
+  //           }
+  //           p{
+  //               line-height: 1.8;
+  //               font-size: 10.8px;
+  //               color: hsl(0, 0%, 63%);
+  //               line-height: 1; 
+  //               font-size: 12.5px;
+  //               max-width: 365px;
+  //               color: hsl(0, 0%, 63%);
+  //           }
+  //         }
+      
+  //       }
+  //     }
 }
+
+//for the first part of the responsiveness
+// @media screen and (max-width: 1000px) {
+//   .header{
+//     display: none; /* hide for small screens */
+//   }
+//   section.flexGrid{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 0px;
+//     // margin-bottom: -5px;
+//   }
+
+//   //below is the left side own
+//   article.leftSide{
+//     width: 100%;
+//     div{
+
+//       div.sliderControlMob{
+//         display: block; /* hide for small screens */
+//       }
+//     }
+//   }//below is the left side own
+  
+//   //this for the right side
+//   article.rightSide{
+//     width: 100%;
+//     div.rightPadding{
+//       padding: 50px 50px;
+
+//       .sliderControlDesk{
+//         display: none; /* hide for small screens */
+//       }
+//     }
+//   }//right side
+
+//   //for the lower part of the site
+//   section.flexLower{
+//     display: grid;
+  
+//     article.lowerSide{
+//       display: grid;
+//       grid-template-columns: 1fr;
+//       align-items: center;
+//       // gap: 20px;
+//       // margin-top: 0;
+  
+//       img{
+//           width: 100%;
+//           // height: 200%;
+//           // margin-top: -10px;
+//       }
+//       div.text-content{
+//         background-color: #f99191;
+//         padding: 50px 50px;
+  
+//         h2{
+//             font-size: 14px;
+//             letter-spacing: 4px;
+//             word-spacing: 2px;
+//             margin-bottom: 12px;
+//         }
+//         p{
+//             line-height: 1.8;
+//             font-size: 10.8px;
+//             color: hsl(0, 0%, 63%);
+//             line-height: 1; 
+//             font-size: 12.5px;
+//             max-width: 365px;
+//             color: hsl(0, 0%, 63%);
+//         }
+//       }
+  
+//     }
+//   }
+// }
+
+// @media (max-width: 800px){
+//   .hideOnMobile{
+//       display: none;
+//   }
+//   .menuButton{
+//       display: block;
+//   }
+// }
+//for the first part of the responsiveness
 
 // @media screen and (max-width: 1200px){  
 //   header nav img.site-header {
