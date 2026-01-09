@@ -1,62 +1,79 @@
 import roomlogo from "../assets/images/logo.svg";
 import iconHamburgerOpen from "../assets/images/icon-hamburger.svg";
 import iconHamburgerClose from "../assets/images/icon-close.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Header = () =>{
-    const [navDisplay, setNavDisplay] = useState(false);
-    const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
-  
-    const openNav = () => {
-      setNavDisplay(true);
-    }
-  
-    const closeNav = () => {
-      setNavDisplay(false);
-    }
-  
-    window.onresize = () => {
-      setDeviceWidth(window.innerWidth);
-    }
+const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
-    return(
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 800);
+            if (window.innerWidth >= 800) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    return (
         <header className="header">
-            <a href="#">
-                <img className="site-header" src={roomlogo} alt="Room logo" />
+            <a href="#" className="logo-link">
+                <img className="logo" src={roomlogo} alt="Room logo" />
             </a>
 
-            <nav className={(deviceWidth < 800) ? (navDisplay ? "open" : "") : ""}>
-
-                {/* <ul className="notDeskTop">
-                    <li><a href="#home">home</a></li>
-                    <li><a href="#shop">shop</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul> */}
-                {/* for icon close nav */}
-
-                <ul className="onMobile">
-                    <li className="hideOnMobile"><a href="#home">home</a></li>
-                    <li className="hideOnMobile"><a href="#shop">shop</a></li>
-                    <li className="hideOnMobile"><a href="#about">about</a></li>
-                    <li className="hideOnMobile"><a href="#contact">contact</a></li>
-                    <li className="menuButton">
-                        <a href="">
-                            <img className="site-header" src={iconHamburgerOpen} alt="Room logo" id="iconHamburgerOpen" onClick={openNav} />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            
-                            <img className="site-header" src={iconHamburgerClose} alt="Room logo" onClick={closeNav} />
-                        </a>
-                    </li>
-                </ul>
-                {/* for icon open nav*/}
-            </nav>
-            
+            {isMobile ? (
+                <>
+                    <button 
+                        className="hamburger-btn" 
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        <img 
+                            src={iconHamburgerOpen} 
+                            alt="Open menu"
+                            className={isMenuOpen ? 'hidden' : ''}
+                        />
+                    </button>
+                    <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+                        <button 
+                            className="close-btn" 
+                            onClick={closeMenu}
+                            aria-label="Close menu"
+                        >
+                            <img src={iconHamburgerClose} alt="Close menu" />
+                        </button>
+                        <ul>
+                            <li><a href="#home" onClick={closeMenu}>home</a></li>
+                            <li><a href="#shop" onClick={closeMenu}>shop</a></li>
+                            <li><a href="#about" onClick={closeMenu}>about</a></li>
+                            <li><a href="#contact" onClick={closeMenu}>contact</a></li>
+                        </ul>
+                    </nav>
+                </>
+            ) : (
+                <nav className="desktop-nav">
+                    <ul>
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#shop">shop</a></li>
+                        <li><a href="#about">about</a></li>
+                        <li><a href="#contact">contact</a></li>
+                    </ul>
+                </nav>
+            )}
         </header>
-    )
-}
+    );
+};
 
 export default Header;

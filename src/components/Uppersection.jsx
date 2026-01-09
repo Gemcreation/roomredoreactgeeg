@@ -1,105 +1,104 @@
-
-// import heroDesktopImg from "../assets/images/desktop-image-hero-1.jpg";
-// import heroMobileImg from "../assets/images/desktop-image-hero-1.jpg";
+import heroDesktop1 from "../assets/images/desktop-image-hero-1.jpg";
+import heroDesktop2 from "../assets/images/desktop-image-hero-2.jpg";
+import heroDesktop3 from "../assets/images/desktop-image-hero-3.jpg";
+import heroMobile1 from "../assets/images/mobile-image-hero-1.jpg";
+import heroMobile2 from "../assets/images/mobile-image-hero-2.jpg";
+import heroMobile3 from "../assets/images/mobile-image-hero-3.jpg";
 import iconArrow from "../assets/images/icon-arrow.svg";
 import slideIconLeft from "../assets/images/icon-angle-left.svg";
 import slideIconRight from "../assets/images/icon-angle-right.svg";
-//need a state to handle the iage sldier for me and make use of the use effect for automate sliding.
 import { useState, useEffect } from "react";
 
-
 const Uppersection = () => {
-
-    const herosliderImg = [
-        "/desktop-image-hero-1.jpg",
-        "/desktop-image-hero-2.jpg",
-        "/desktop-image-hero-3.jpg",
-      ];
-    //above is the images from the public folder to display
+    const slides = [
+        {
+            desktopImg: heroDesktop1,
+            mobileImg: heroMobile1,
+            title: "Discover innovative ways to decorate",
+            description: "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love."
+        },
+        {
+            desktopImg: heroDesktop2,
+            mobileImg: heroMobile2,
+            title: "We are available all across the globe",
+            description: "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today."
+        },
+        {
+            desktopImg: heroDesktop3,
+            mobileImg: heroMobile3,
+            title: "Manufactured with the best materials",
+            description: "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office."
+        }
+    ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    //this to automate the image slider with useEffect
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
     useEffect(() => {
-        const interval = setInterval(() => {
-          //usin this to move to next image (loop back to first)
-          setCurrentIndex((prevIndex) =>
-            prevIndex === herosliderImg.length - 1 ? 0 : prevIndex + 1
-          );
-        }, 3000); // yeah, this change every 3 seconds
-    
-        //I'm using this to cleanup to prevent multiple intervals running
-        return () => clearInterval(interval);
-      }, [herosliderImg.length]);
-      
-      //here is the arrow manul image sldier
-      const goToPrevious = () => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 800);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const goToPrevious = () => {
         setCurrentIndex((prevIndex) =>
-          prevIndex === 0 ? herosliderImg.length - 1 : prevIndex - 1
+            prevIndex === 0 ? slides.length - 1 : prevIndex - 1
         );
-      };
-    
-      const goToNext = () => {
+    };
+
+    const goToNext = () => {
         setCurrentIndex((prevIndex) =>
-          prevIndex === herosliderImg.length - 1 ? 0 : prevIndex + 1
+            prevIndex === slides.length - 1 ? 0 : prevIndex + 1
         );
-      };
+    };
 
-    return(
+    const currentSlide = slides[currentIndex];
 
-        <section className="flexGrid main">
-            <article className="leftSide">
-                <div>
-                    {/* <picture>
-                        <source media='(min-width: 600px)' srcSet={heroDesktopImg}></source>
-                        <img src={heroDesktopImg} alt='Web Image' />
-                    </picture> */}
-                    {/* <img src={heroDesktopImg} alt="slider image" /> this for the default hero img display, belos is the one for the hero img slidder*/}
-
-                    <img src={herosliderImg[currentIndex]} alt="slider image" className="img" />
-
-                    
-                    <div className="sliderControl sliderControlMob">
-                        <div>
-                            <button className="sliderBtn" onClick={goToPrevious}>
-                                <img src={slideIconLeft} alt="slideIconLeft" />
-                            </button>
-
-                            <button className="sliderBtn" onClick={goToNext}>
-                                <img src={slideIconRight} alt="slideIconRight" />
-                            </button>
-                        </div>
-                    </div>
+    return (
+        <section className="hero-section">
+            <article className="hero-image-wrapper">
+                <picture>
+                    <source media="(min-width: 800px)" srcSet={currentSlide.desktopImg} />
+                    <img 
+                        src={currentSlide.mobileImg} 
+                        alt={currentSlide.title}
+                        className="hero-image"
+                    />
+                </picture>
+                <div className="slider-controls mobile-controls">
+                    <button className="slider-btn" onClick={goToPrevious} aria-label="Previous slide">
+                        <img src={slideIconLeft} alt="Previous" />
+                    </button>
+                    <button className="slider-btn" onClick={goToNext} aria-label="Next slide">
+                        <img src={slideIconRight} alt="Next" />
+                    </button>
                 </div>
             </article>
 
-            <article className="rightSide">
-                <div className="rightPadding">
-                    <div className="heroText">
-                        <h1>Discover innovative ways to decorate</h1>
-                        <p>We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.                   
-                        </p>
-                        <a href="#" className="cta">
-                            <span>Shop now</span>
-                            <img src={iconArrow} alt="shopping arrow" />
+            <article className="hero-content">
+                <div className="hero-content-inner">
+                    <div className="hero-text">
+                        <h1>{currentSlide.title}</h1>
+                        <p>{currentSlide.description}</p>
+                        <a href="#shop" className="cta-link">
+                            <span>SHOP NOW</span>
+                            <img src={iconArrow} alt="Arrow" />
                         </a>
                     </div>
-
-                    <div className="sliderControl sliderControlDesk">
-                        <div>
-                            <button className="sliderBtn" onClick={goToPrevious}>
-                                <img src={slideIconLeft} alt="slideIconLeft" />
-                            </button>
-
-                            <button className="sliderBtn" onClick={goToNext}>
-                                <img src={slideIconRight} alt="slideIconRight" />
-                            </button>
-                        </div>
+                    <div className="slider-controls desktop-controls">
+                        <button className="slider-btn" onClick={goToPrevious} aria-label="Previous slide">
+                            <img src={slideIconLeft} alt="Previous" />
+                        </button>
+                        <button className="slider-btn" onClick={goToNext} aria-label="Next slide">
+                            <img src={slideIconRight} alt="Next" />
+                        </button>
                     </div>
                 </div>
             </article>
-
         </section>
-    )
-}
+    );
+};
 
 export default Uppersection;
