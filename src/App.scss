@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
 
 * {
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -24,8 +24,9 @@ body {
     padding: 3rem 3rem;
     max-width: 1440px;
     margin: 0 auto;
+    background-color: #f02020;//not needed
 
-    .logo-link {
+    .logoLink {
         display: inline-block;
         margin-right: 3rem;
     }
@@ -35,14 +36,14 @@ body {
         height: auto;
     }
 
-    .hamburger-btn {
-        display: none;
+    .hamburgerBtn {
+        display: block;
         background: none;
         border: none;
         cursor: pointer;
         padding: 0.5rem;
         margin-left: auto;
-        z-index: 101;
+        z-index: 1001;
 
         img {
             display: block;
@@ -53,7 +54,7 @@ body {
         }
     }
 
-    .desktop-nav {
+    .desktopNav {
         ul {
             display: flex;
             list-style: none;
@@ -87,14 +88,14 @@ body {
                     }
 
                     &:hover::after {
-                        width: 100%;
+                        width: 75%;
                     }
                 }
             }
         }
     }
 
-    .mobile-nav {
+    .mobileNav {
         display: none;
         position: fixed;
         top: 0;
@@ -110,17 +111,19 @@ body {
         &.open {
             opacity: 1;
             visibility: visible;
+            // background-color: yellow; //not needed
         }
 
-        .close-btn {
+        .closeBtn {
             position: absolute;
             top: 2rem;
-            right: 2rem;
+            left: 2rem; //this can also be at the right but we need some nav at the mobile view
             background: none;
             border: none;
             cursor: pointer;
             padding: 0.5rem;
             z-index: 102;
+            background-color: aqua;//not needed
 
             img {
                 display: block;
@@ -131,7 +134,7 @@ body {
             position: absolute;
             top: 0;
             left: 0;
-            width: 70%;
+            width: 50%;
             max-width: 300px;
             height: 100%;
             background: #fff;
@@ -378,15 +381,15 @@ body {
     .header {
         padding: 2rem 1.5rem;
 
-        .desktop-nav {
+        .desktopNav {
             display: none;
         }
 
-        .hamburger-btn {
+        .hamburgerBtn {
             display: block;
         }
 
-        .mobile-nav {
+        .mobileNav {
             display: block;
         }
     }

@@ -29,16 +29,15 @@ const Header = () => {
 
     return (
         <header className="header">
-            <a href="#" className="logo-link">
+            <a href="#" className="logoLink">
                 <img className="logo" src={roomlogo} alt="Room logo" />
             </a>
 
             {isMobile ? (
                 <>
                     <button 
-                        className="hamburger-btn" 
+                        className="hamburgerBtn" 
                         onClick={toggleMenu}
-                        aria-label="Toggle menu"
                     >
                         <img 
                             src={iconHamburgerOpen} 
@@ -46,11 +45,10 @@ const Header = () => {
                             className={isMenuOpen ? 'hidden' : ''}
                         />
                     </button>
-                    <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+                    <nav className={`mobileNav ${isMenuOpen ? 'open' : ''}`}>
                         <button 
-                            className="close-btn" 
+                            className="closeBtn" 
                             onClick={closeMenu}
-                            aria-label="Close menu"
                         >
                             <img src={iconHamburgerClose} alt="Close menu" />
                         </button>
@@ -63,7 +61,7 @@ const Header = () => {
                     </nav>
                 </>
             ) : (
-                <nav className="desktop-nav">
+                <nav className="desktopNav">
                     <ul>
                         <li><a href="#home">home</a></li>
                         <li><a href="#shop">shop</a></li>
